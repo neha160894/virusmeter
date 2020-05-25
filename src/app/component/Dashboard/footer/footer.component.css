@@ -1,0 +1,25 @@
+.navbar{
+    margin-bottom: 0;
+    min-height: 63px;
+    border-radius: 4px;
+    position: relative;
+    min-height: 70px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    
+}
+.navbar-default{
+background-color: #495057;
+border-bottom: 1px solid #e3e7e9;
+border-color: #e7e7e7;
+}
+div{
+	display:block
+}
+.container{
+    max-width: 1100px!important;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
