@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ViewCountriesCount } from './component/country/view-countries-count';
+import { SearchPipe } from './pipes/search-pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ViewCountriesCount,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

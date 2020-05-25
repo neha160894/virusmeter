@@ -1,0 +1,90 @@
+<div class="container" *ngIf="">
+    <div class="row">
+        <div class='card'>
+            <div class='card-header' id="r1">
+                <b> {{pageTitle}}</b>
+            </div>
+            
+            <div class='card-body'>
+                <div class='row'>
+                    <div class='col-md-2'>
+                        <label style="margin-left: 20px;margin-top: 5px; font-size: medium;"><b>Search:</b></label>
+                    </div> 
+                    <div class='col-md-8'>
+                        <input style="margin-bottom: 17px;" class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" />
+                    </div>
+                </div>
+            
+                <div class='table-responsive'>
+                    <table class='table'>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Country</th>
+                                <th>Total Cases</th>
+                                <th>New Cases</th>
+                                <th>Total Deaths</th>
+                                <th>New Deaths</th>
+                                <th>Total Recovered</th>
+                                <th>Active Cases</th>
+                                <th>Serious, Critical</th>
+                                <th>Total Cases/ 1M Pop</th>
+                                <th>Deaths/ 1M Pop</th>
+                                <th>Total Tests</th>
+                                <th>Test/ 1M Pop</th>
+                                <th>Population</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of complaint | filter:searchText | searchPipe1: c_status | datePipe: fromDate: toDate">
+                                <td>
+                                    {{user.id}}
+                                </td>
+                                <td>
+                                    {{user.country}}
+                                </td>
+                                <td>
+                                    {{ user.totalCases}}
+                                </td>
+                                <td>
+                                    {{user.newCases}}
+                                </td>
+                                <td>
+                                    {{user.totalDeaths}}
+                                </td>
+                                <td>
+                                    {{user.newDeaths}}
+                                </td>
+                                <td>
+                                    {{ user.recovered}}
+                                </td>
+                                <td>
+                                    {{user.active}}
+                                </td>
+                                <td>
+                                    {{user.serious}}
+                                </td>
+                                <td>
+                                    {{user.totalCasePop}}
+                                </td>
+                                <td>
+                                    {{ user.totalDeathPop}}
+                                </td>
+                                <td>
+                                    {{user.totalTest}}
+                                </td>
+                                <td>
+                                    {{user.test}}
+                                </td>
+                                <td>
+                                    {{user.population}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
