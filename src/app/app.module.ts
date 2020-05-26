@@ -9,6 +9,8 @@ import { UserDashboardComponent } from './component/Dashboard/user-dashboard/use
 import { CovidGraphComponent } from './component/Links/covid-graph/covid-graph.component';
 import { HeaderComponent } from './component/Dashboard/header/header.component';
 import { FooterComponent } from './component/Dashboard/footer/footer.component';
+import { NewsFeedsComponent } from './component/Dashboard/Links/news-feeds/news-feeds.component';
+import { IndiacasesComponent } from './component/Dashboard/CountryCases/indiacases/indiacases.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FooterComponent } from './component/Dashboard/footer/footer.component';
     UserDashboardComponent,
     CovidGraphComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NewsFeedsComponent,
+    IndiacasesComponent
   ],
   imports: [
     BrowserModule,

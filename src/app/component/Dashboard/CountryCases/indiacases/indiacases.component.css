@@ -1,0 +1,40 @@
+.card-header{
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+.container{
+    margin-top: 20px;
+    margin-bottom:20px
+}
+.numbr-table-main{
+    text-align: center;
+}
+.number{
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+.number-recovered{
+    color: #8ACA2B
+}
+.number-cases-serious{
+    color: red;
+}
+.number-mild-cases{
+    color: #8080FF;
+}
+.label{
+    font-size: 13.5px;
+    text-align: center;
+}
+.closed-cases-row{
+    margin-top: 20px;
+}
+/* .number-mild-condition{
+    margin-left: 20px
+}
+.number-critical-condition{
+    margin-left: 30px;
+} */

@@ -8,7 +8,6 @@
     border: 1px solid transparent;
 }
 .navbar-default{
-background-color: #495057;
 border-bottom: 1px solid #e3e7e9;
 border-color: #e7e7e7;
 }
@@ -21,6 +20,14 @@ div{
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+.headinglogo{
+  color: #02de34;
+  font-size: 30px;
+}
+.meter1{
+  color:#ff4629;
+  /* background-color: greenyellow; */
 }
 ul {
     list-style-type: none;
@@ -36,7 +43,6 @@ ul {
     padding: 14px 16px;
     text-decoration: none;
   }
-  
   .coronaheader{
     color: orange;
     font-weight: bold;
