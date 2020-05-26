@@ -1,0 +1,30 @@
+import { Component, OnInit } from '@angular/core';
+import { BackendApiService} from '../../../services/backend-api.service'
+@Component({
+  selector: 'app-total-count',
+  templateUrl: './total-count.component.html',
+  styleUrls: ['./total-count.component.css']
+})
+export class TotalCountComponent implements OnInit {
+  totalCases:number
+  confirmedCases:number
+  totaldeath:number
+  totalRecovered:number
+  constructor(private backendservice:BackendApiService) { }
+
+  ngOnInit(): void {
+    this.totalcases()
+  }
+
+    totalcases(){
+      this.backendservice.getSummary().subscribe(
+        data => {
+       this.totalCases= data["Global"]
+       this.confirmedCases=this.totalCases["TotalConfirmed"];
+       this.totaldeath=this.totalCases["TotalDeaths"]
+       this.totalRecovered=this.totalCases["TotalRecovered"]
+      })
+    }
+
+
+}

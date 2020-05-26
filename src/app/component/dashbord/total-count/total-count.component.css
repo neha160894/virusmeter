@@ -1,0 +1,64 @@
+
+.page-top-label{
+    justify-content: center;
+    background-color: #f5f5f5;
+    color: #777;
+    font-size: 19px;
+    text-transform: uppercase;
+    line-height: 40px;
+  }
+  .page-label-top{
+    text-align: center;
+  }
+  .row{
+      align-items: center;
+  }
+  .page-date-label{
+  font-size: 13px;
+  color: #999;
+  margin-top: 5px;
+  justify-content: center;
+  }
+  ul#menu li {
+    display:inline;
+  }
+  .horizontal-link{
+  margin-top: 20px;
+  justify-content: center;
+  font-size: 14px; 
+  } 
+
+a{
+    color: #699a21;
+    text-decoration: underline;
+}
+a:hover{
+    color: #86c32a;
+    text-decoration: underline;
+}
+.main-counter{
+    font-family: roboto condensed,sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    color: #555;
+    justify-content: center;
+    margin: 0;
+}
+.main-counter-number{
+    font-weight: 700;
+    color: #696969;
+    font-size: 54px;
+    justify-content: center;
+}
+.totalcases{
+    color: #aaa;
+}
+.view-by-country{
+    justify-content: center;
+}
+.main-counter-deaths{
+    margin-top: 40px;
+    text-align: center;}
+.recovered{
+    color: #8ACA2B;
+}  
