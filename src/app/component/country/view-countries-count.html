@@ -1,84 +1,87 @@
-<div class="container" *ngIf="">
+<div class="container">
     <div class="row">
         <div class='card'>
-            <div class='card-header' id="r1">
+            <div class='card-header head' id="r1">
                 <b> {{pageTitle}}</b>
             </div>
             
             <div class='card-body'>
                 <div class='row'>
                     <div class='col-md-2'>
-                        <label style="margin-left: 20px;margin-top: 5px; font-size: medium;"><b>Search:</b></label>
+                        <label class="label"><b>Search:</b></label>
                     </div> 
                     <div class='col-md-8'>
-                        <input style="margin-bottom: 17px;" class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" />
+                        <input 
+                            class="form-control" 
+                            type="text" 
+                            name="search" 
+                            placeholder="Search..." 
+                            [(ngModel)]="searchText"/>
                     </div>
                 </div>
             
                 <div class='table-responsive'>
-                    <table class='table'>
+                    <table id="table" class='table table-bordered'>
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Country</th>
-                                <th>Total Cases</th>
+                                <th data-field="country" 
+                                data-sortable="true">Country</th>
+                                <th data-field="TotalConfirmed" 
+                                data-sortable="true">Total Cases</th>
                                 <th>New Cases</th>
                                 <th>Total Deaths</th>
                                 <th>New Deaths</th>
                                 <th>Total Recovered</th>
                                 <th>Active Cases</th>
-                                <th>Serious, Critical</th>
-                                <th>Total Cases/ 1M Pop</th>
-                                <th>Deaths/ 1M Pop</th>
-                                <th>Total Tests</th>
-                                <th>Test/ 1M Pop</th>
-                                <th>Population</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let user of complaint | filter:searchText | searchPipe1: c_status | datePipe: fromDate: toDate">
+                            <tr style="background-color: #ccc;">
+                                <td>&nbsp;</td>
+                                <td>World</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr *ngFor="let list of countryList | filter:searchText; let i = index">
                                 <td>
-                                    {{user.id}}
+                                    {{i+1}}
                                 </td>
                                 <td>
-                                    {{user.country}}
+                                    {{list.Country}}
                                 </td>
                                 <td>
-                                    {{ user.totalCases}}
+                                    {{ list.TotalConfirmed + list.NewConfirmed }}
+                                </td>
+                                <td [ngStyle]="{'background-color': list.NewConfirmed>0 ? '#EAD05D' : 'white' }">
+                                    {{list.NewConfirmed > 0 ? '+' + list.NewConfirmed : null}}
                                 </td>
                                 <td>
-                                    {{user.newCases}}
+                                    {{list.TotalDeaths + list.NewDeaths}}
+                                </td>
+                                <td [ngStyle]="{'background-color': list.NewDeaths>0 ? 'red' : 'white', 'color': list.NewDeaths>0 ? 'white' : 'black' }">
+                                    {{list.NewDeaths > 0 ? '+' + list.NewDeaths : null}}
                                 </td>
                                 <td>
-                                    {{user.totalDeaths}}
+                                    {{ list.TotalRecovered + list.NewRecovered}}
                                 </td>
                                 <td>
-                                    {{user.newDeaths}}
-                                </td>
-                                <td>
-                                    {{ user.recovered}}
-                                </td>
-                                <td>
-                                    {{user.active}}
-                                </td>
-                                <td>
-                                    {{user.serious}}
-                                </td>
-                                <td>
-                                    {{user.totalCasePop}}
-                                </td>
-                                <td>
-                                    {{ user.totalDeathPop}}
-                                </td>
-                                <td>
-                                    {{user.totalTest}}
-                                </td>
-                                <td>
-                                    {{user.test}}
-                                </td>
-                                <td>
-                                    {{user.population}}
-                                </td>
+                                    {{list.TotalConfirmed - list.TotalDeaths - list.TotalRecovered}} 
+                                </td>                 
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>Total:</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>

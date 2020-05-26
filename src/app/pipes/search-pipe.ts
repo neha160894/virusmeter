@@ -1,20 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
-
 @Pipe({
-  name: 'searchPipe'
+  name: 'filter'
 })
 export class SearchPipe implements PipeTransform {
-
-  transform(value: any, args?: any): any {
-    if (!args) {
-      return value;
-    }
-  return value.filter((val:any)=>{
-    let rval =(val.u_name.toLocaleLowerCase().includes(args))||
-    (val.u_mobile.toLocaleLowerCase().includes(args))||
-    (val.u_email.toLocaleLowerCase().includes(args));
-      return rval;
-  })
-
-  }
+  transform(items: any[], searchText: string): any[] {
+    if(!items) return [];
+    if(!searchText) return items;
+    searchText = searchText.toLocaleLowerCase();
+    return items.filter( it => {
+        return it.Country.toLocaleLowerCase().includes(searchText);
+    });
+   }
 }
