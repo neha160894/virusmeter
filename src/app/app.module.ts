@@ -9,6 +9,7 @@ import { UserDashboardComponent } from './component/Dashboard/user-dashboard/use
 import { CovidGraphComponent } from './component/Links/covid-graph/covid-graph.component';
 import { HeaderComponent } from './component/Dashboard/header/header.component';
 import { FooterComponent } from './component/Dashboard/footer/footer.component';
+import { AddCommaPipe } from './pipe/add-comma.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FooterComponent } from './component/Dashboard/footer/footer.component';
     UserDashboardComponent,
     CovidGraphComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AddCommaPipe
   ],
   imports: [
     BrowserModule,
