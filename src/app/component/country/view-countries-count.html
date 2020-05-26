@@ -25,10 +25,8 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th data-field="country" 
-                                data-sortable="true">Country</th>
-                                <th data-field="TotalConfirmed" 
-                                data-sortable="true">Total Cases</th>
+                                <th>Country</th>
+                                <th>Total Cases</th>
                                 <th>New Cases</th>
                                 <th>Total Deaths</th>
                                 <th>New Deaths</th>
@@ -39,19 +37,22 @@
                         <tbody>
                             <tr style="background-color: #ccc;">
                                 <td>&nbsp;</td>
-                                <td>World</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><b>World</b></td>
+                                <td>{{ totalConfirmed + newConfirmed }}</td>
+                                <td>+{{ newConfirmed }}</td>
+                                <td>{{ totalDeaths + newDeaths }}</td>
+                                <td>+{{ newDeaths }}</td>
+                                <td>{{ totalRecovered + newRecovered }}</td>
+                                <td>{{ totalConfirmed - totalDeaths - totalRecovered }}</td>
                             </tr>
-                            <tr *ngFor="let list of countryList | filter:searchText; let i = index">
+                            <tr 
+                                *ngFor="let list of countryList | filter:searchText; 
+                                let i = index"
+                                style="font-weight: bold">
                                 <td>
                                     {{i+1}}
                                 </td>
-                                <td>
+                                <td style="color:#1169A7">
                                     {{list.Country}}
                                 </td>
                                 <td>
@@ -75,13 +76,13 @@
                             </tr>
                             <tr>
                                 <td>&nbsp;</td>
-                                <td>Total:</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><b>Total:</b></td>
+                                <td>{{ totalConfirmed + newConfirmed }}</td>
+                                <td>+{{ newConfirmed }}</td>
+                                <td>{{ totalDeaths + newDeaths }}</td>
+                                <td>+{{ newDeaths }}</td>
+                                <td>{{ totalRecovered + newRecovered }}</td>
+                                <td>{{ totalConfirmed - totalDeaths - totalRecovered }}</td>
                             </tr>
                         </tbody>
                     </table>

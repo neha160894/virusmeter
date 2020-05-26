@@ -13,13 +13,21 @@ export class ViewCountriesCount implements OnInit {
     pageTitle = 'List of Countries';
     countryList: [];
     searchText: string;
-    order;
+    totalCases: number;
+    totalConfirmed: number;
+    totalDeaths: number;
+    totalRecovered: number;
+    newConfirmed: number;
+    newDeaths:number;
+    newRecovered: number;
 
     constructor(private countries: BackendApiService) {
                     
                 }
     ngOnInit() {    
         this.getCountryList();
+        this.getGlobalList();
+
         // $(document).ready(function() {
         //     $('#table').DataTable();
         // } );
@@ -31,6 +39,18 @@ export class ViewCountriesCount implements OnInit {
             this.countryList = result.filter((el:any) => {
                 return el;
             })
+        })
+    }
+
+    getGlobalList() {
+        this.countries.getSummary().subscribe((data) => {
+            this.totalCases= data["Global"];
+            this.newConfirmed = this.totalCases["NewConfirmed"];
+            this.totalConfirmed=this.totalCases["TotalConfirmed"];
+            this.newDeaths=this.totalCases["NewDeaths"];
+            this.totalDeaths=this.totalCases["TotalDeaths"];
+            this.totalRecovered=this.totalCases["TotalRecovered"];
+            this.newRecovered=this.totalCases["NewRecovered"]
         })
     }
 
