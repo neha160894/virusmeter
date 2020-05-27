@@ -14,7 +14,11 @@ import { UserDashboardComponent } from './component/Dashboard/user-dashboard/use
 import { CovidGraphComponent } from './component/Links/covid-graph/covid-graph.component';
 import { HeaderComponent } from './component/Dashboard/header/header.component';
 import { FooterComponent } from './component/Dashboard/footer/footer.component';
+import { NewsFeedsComponent } from './component/Dashboard/Links/news-feeds/news-feeds.component';
+import { IndiacasesComponent } from './component/Dashboard/CountryCases/indiacases/indiacases.component';
+
 import { AddCommaPipe } from './pipe/add-comma.pipe';
+
 
 
 @NgModule({
@@ -27,6 +31,8 @@ import { AddCommaPipe } from './pipe/add-comma.pipe';
     CovidGraphComponent,
     HeaderComponent,
     FooterComponent,
+    NewsFeedsComponent,
+    IndiacasesComponent,
     AddCommaPipe
   ],
   imports: [

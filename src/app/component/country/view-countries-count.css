@@ -1,5 +1,8 @@
 @import url(https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css);
 
+.card{
+  margin-top: 20px;
+}
 thead {
     color: #337ab7;
 }
@@ -23,7 +26,6 @@ thead {
   border: 1px solid #ccc;
   border-radius: 3px;
 }
-
 .head {
   text-align: center;
   font-weight: bold;

@@ -21,6 +21,14 @@ div{
     margin-right: auto;
     margin-left: auto;
 }
+.headinglogo{
+  color: #02de34;
+  font-size: 30px;
+}
+.meter1{
+  color:#ff4629;
+  /* background-color: greenyellow; */
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -35,7 +43,6 @@ ul {
     padding: 14px 16px;
     text-decoration: none;
   }
-  
   .coronaheader{
     color: orange;
     font-weight: bold;
