@@ -17,6 +17,9 @@ import { FooterComponent } from './component/Dashboard/footer/footer.component';
 import { NewsFeedsComponent } from './component/Dashboard/Links/news-feeds/news-feeds.component';
 import { IndiacasesComponent } from './component/Dashboard/CountryCases/indiacases/indiacases.component';
 
+import { AddCommaPipe } from './pipe/add-comma.pipe';
+
+
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { IndiacasesComponent } from './component/Dashboard/CountryCases/indiacas
     HeaderComponent,
     FooterComponent,
     NewsFeedsComponent,
-    IndiacasesComponent
+    IndiacasesComponent,
+    AddCommaPipe
   ],
   imports: [
     BrowserModule,
