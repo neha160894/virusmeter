@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="row">
+        <div class='card'>
+            <div class='card-header head' id="r1">
+                <b> {{pageTitle}}</b>
+            </div>
+            
+            <div class='card-body'>
+                <div class='row'>
+                    <div class='col-md-2'>
+                        <label class="label"><b>Search:</b></label>
+                    </div> 
+                    <div class='col-md-8'>
+                        <input 
+                            class="form-control" 
+                            type="text" 
+                            name="search" 
+                            placeholder="Search..." 
+                            [(ngModel)]="searchText"/>
+                    </div>
+                </div>
+            
+                <div class='table-responsive'>
+                    <table id="table" class='table table-bordered'>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Country</th>
+                                <th>Total Cases</th>
+                                <th>New Cases</th>
+                                <th>Total Deaths</th>
+                                <th>New Deaths</th>
+                                <th>Total Recovered</th>
+                                <th>Active Cases</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background-color: #ccc;">
+                                <td>&nbsp;</td>
+                                <td><b>World</b></td>
+                                <td>{{ totalConfirmed + newConfirmed }}</td>
+                                <td>+{{ newConfirmed }}</td>
+                                <td>{{ totalDeaths + newDeaths }}</td>
+                                <td>+{{ newDeaths }}</td>
+                                <td>{{ totalRecovered + newRecovered }}</td>
+                                <td>{{ totalConfirmed - totalDeaths - totalRecovered }}</td>
+                            </tr>
+                            <tr 
+                                *ngFor="let list of countryList | filter:searchText; 
+                                let i = index"
+                                style="font-weight: bold">
+                                <td>
+                                    {{i+1}}
+                                </td>
+                                <td style="color:#1169A7">
+                                    {{list.Country}}
+                                </td>
+                                <td>
+                                    {{ list.TotalConfirmed + list.NewConfirmed }}
+                                </td>
+                                <td [ngStyle]="{'background-color': list.NewConfirmed>0 ? '#EAD05D' : 'white' }">
+                                    {{list.NewConfirmed > 0 ? '+' + list.NewConfirmed : null}}
+                                </td>
+                                <td>
+                                    {{list.TotalDeaths + list.NewDeaths}}
+                                </td>
+                                <td [ngStyle]="{'background-color': list.NewDeaths>0 ? 'red' : 'white', 'color': list.NewDeaths>0 ? 'white' : 'black' }">
+                                    {{list.NewDeaths > 0 ? '+' + list.NewDeaths : null}}
+                                </td>
+                                <td>
+                                    {{ list.TotalRecovered + list.NewRecovered}}
+                                </td>
+                                <td>
+                                    {{list.TotalConfirmed - list.TotalDeaths - list.TotalRecovered}} 
+                                </td>                 
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td><b>Total:</b></td>
+                                <td>{{ totalConfirmed + newConfirmed }}</td>
+                                <td>+{{ newConfirmed }}</td>
+                                <td>{{ totalDeaths + newDeaths }}</td>
+                                <td>+{{ newDeaths }}</td>
+                                <td>{{ totalRecovered + newRecovered }}</td>
+                                <td>{{ totalConfirmed - totalDeaths - totalRecovered }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
