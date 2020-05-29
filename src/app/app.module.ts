@@ -23,6 +23,9 @@ import { CovidIncubationComponent } from './component/Links/covid-incubation/cov
 import { CovidTransmissionComponent } from './component/Links/covid-transmission/covid-transmission.component';
 import { CovidViewByCountryComponent } from './component/Links/covid-view-by-country/covid-view-by-country.component';
 
+import { AddCommaPipe } from './pipe/add-comma.pipe';
+
+
 
 @NgModule({
   declarations: [
