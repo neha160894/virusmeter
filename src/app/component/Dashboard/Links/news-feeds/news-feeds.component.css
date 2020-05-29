@@ -1,5 +1,8 @@
 .card{
-    margin-bottom: 30px;
+    margin-bottom: 60px;
+    background-color: #fff;
+    box-shadow: 0 1.4rem 8rem rgba(0,0,0,0.2);
+    border-radius: 0.8rem;
 }
 .newsUpdate{
     margin-bottom: 50px;
@@ -23,10 +26,20 @@
 .date-day{
     margin-top: 5px;
     margin-left: 5px;
+    display: block;
+    color: rgba(0,0,0,.5);
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: right;
+    margin-right: 5px;
+
 }
 .news-title{
+    font-size: 2.5rem;
+    margin: 1.5rem 0 2rem;
     text-align: center;
-    color: #007eff;
+    text-transform: uppercase;
+    color: #4facfe;
 }
 .newsUpdate{
     margin-top: 10px;
@@ -36,4 +49,20 @@
 .news-description{
     margin-bottom: 10px;
     margin-right: 10px;
+    font-size: 1.4rem;
+    color: rgba((0), 0, 0, alph.7);
+}
+.ReadMore{
+    letter-spacing: 1px;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: #fff;
+    float: right;
+    margin-bottom: 10px;
+    background-image: linear-gradient(to right,#4facfe 0%,#00f2fe 30%);
+    border-radius: .8rem;
+}
+.ReadMore:hover{
+    background-image: linear-gradient(to right,#4facfe 100%,#00f2fe 0% );
 }
