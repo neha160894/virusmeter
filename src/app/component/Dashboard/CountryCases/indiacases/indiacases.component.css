@@ -1,34 +1,43 @@
-.card-header{
+.card-header {
     text-align: center;
     font-size: 25px;
     text-transform: uppercase;
     font-weight: 100;
 }
-.container{
+
+.container {
     margin-top: 20px;
-    margin-bottom:20px
+    margin-bottom: 20px
 }
-.numbr-table-main{
+
+.numbr-table-main {
     text-align: center;
 }
-.number{
+
+.number {
     font-size: 24px;
     text-align: center;
     font-weight: bold;
 }
-.number-recovered{
+
+.number-recovered {
     color: #8ACA2B
 }
-.number-cases-serious{
+
+.number-cases-serious {
     color: red;
 }
-.number-mild-cases{
+
+.number-mild-cases {
     color: #8080FF;
+    margin-left: 50px;
 }
-.label{
+
+.label {
     font-size: 13.5px;
     text-align: center;
 }
-.closed-cases-row{
+
+.closed-cases-row {
     margin-top: 20px;
 }
