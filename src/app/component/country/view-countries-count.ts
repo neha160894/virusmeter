@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { BackendApiService } from '../../services/backend-api.service';
-import { OrderPipe } from 'ngx-order-pipe';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-view-countries-count',
@@ -9,7 +9,7 @@ import { OrderPipe } from 'ngx-order-pipe';
     styleUrls: ['./view-countries-count.css']
 })
 
-export class ViewCountriesCount implements OnInit {
+export class ViewCountriesCount implements OnInit, OnDestroy {
     pageTitle = 'List of Countries';
     countryList: [];
     searchText: string;
@@ -20,10 +20,10 @@ export class ViewCountriesCount implements OnInit {
     newConfirmed: number;
     newDeaths:number;
     newRecovered: number;
+    subscription: Subscription
 
-    constructor(private countries: BackendApiService) {
-                    
-                }
+    constructor(private countries: BackendApiService) {}
+
     ngOnInit() {    
         this.getCountryList();
         this.getGlobalList();
@@ -34,7 +34,7 @@ export class ViewCountriesCount implements OnInit {
     }
 
     getCountryList() {
-        this.countries.getSummary().subscribe((data) => {
+        this.subscription = this.countries.getSummary().subscribe((data) => {
             let result = data['Countries'];
             this.countryList = result.filter((el:any) => {
                 return el;
@@ -43,7 +43,7 @@ export class ViewCountriesCount implements OnInit {
     }
 
     getGlobalList() {
-        this.countries.getSummary().subscribe((data) => {
+        this.subscription = this.countries.getSummary().subscribe((data) => {
             this.totalCases= data["Global"];
             this.newConfirmed = this.totalCases["NewConfirmed"];
             this.totalConfirmed=this.totalCases["TotalConfirmed"];
@@ -54,15 +54,19 @@ export class ViewCountriesCount implements OnInit {
         })
     }
 
-    ascNumberSort = true;
-    TotalConfirmed;
-    sortNumberColumn() {
-    this.ascNumberSort = !this.ascNumberSort;
-    if(this.ascNumberSort) {
-        this.TotalConfirmed.sort((a, b) => a - b); // For ascending sort
-    } else {
-        this.TotalConfirmed.sort((a, b) => b - a); // For descending sort
-    }
+//     ascNumberSort = true;
+//     TotalConfirmed;
+//     sortNumberColumn() {
+//     this.ascNumberSort = !this.ascNumberSort;
+//     if(this.ascNumberSort) {
+//         this.TotalConfirmed.sort((a, b) => a - b); // For ascending sort
+//     } else {
+//         this.TotalConfirmed.sort((a, b) => b - a); // For descending sort
+//     }
+// }
+
+ngOnDestroy() {
+    this.subscription.unsubscribe();
 }
 
 }
