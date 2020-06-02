@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { BackendApiService } from '../../services/backend-api.service';
-import { Subscription } from 'rxjs';
+import { TotalCountComponent } from '../dashbord/total-count/total-count.component';
+import { CompileMetadataResolver } from '@angular/compiler';
 
 @Component({
     selector: 'app-view-countries-count',
@@ -9,9 +10,9 @@ import { Subscription } from 'rxjs';
     styleUrls: ['./view-countries-count.css']
 })
 
-export class ViewCountriesCount implements OnInit, OnDestroy {
+export class ViewCountriesCount implements OnInit {
     pageTitle = 'List of Countries';
-    countryList: [];
+    countryList: any[];
     searchText: string;
     totalCases: number;
     totalConfirmed: number;
@@ -20,53 +21,67 @@ export class ViewCountriesCount implements OnInit, OnDestroy {
     newConfirmed: number;
     newDeaths:number;
     newRecovered: number;
-    subscription: Subscription
 
     constructor(private countries: BackendApiService) {}
 
     ngOnInit() {    
-        this.getCountryList();
-        this.getGlobalList();
-
-        // $(document).ready(function() {
-        //     $('#table').DataTable();
-        // } );
+        this.getList(); 
+        $(function() {
+            (<any>$("#table")).tablesorter();
+          });
     }
 
-    getCountryList() {
-        this.subscription = this.countries.getSummary().subscribe((data) => {
-            let result = data['Countries'];
-            this.countryList = result.filter((el:any) => {
-                return el;
-            })
-        })
-    }
-
-    getGlobalList() {
-        this.subscription = this.countries.getSummary().subscribe((data) => {
-            this.totalCases= data["Global"];
+    getList() {
+        this.countries.getSummary().subscribe((data) => {
+        this.totalCases = data['Global'];
+        let result = data['Countries'];
             this.newConfirmed = this.totalCases["NewConfirmed"];
             this.totalConfirmed=this.totalCases["TotalConfirmed"];
             this.newDeaths=this.totalCases["NewDeaths"];
             this.totalDeaths=this.totalCases["TotalDeaths"];
             this.totalRecovered=this.totalCases["TotalRecovered"];
             this.newRecovered=this.totalCases["NewRecovered"]
-        })
+        this.countryList = result.filter((el:any) => {
+            return el;
+        });
+        this.countryList = this.countryList.sort((a, b) => (a.TotalConfirmed > b.TotalConfirmed) ? -1 : 1)
+        
+      })
     }
 
-//     ascNumberSort = true;
-//     TotalConfirmed;
-//     sortNumberColumn() {
-//     this.ascNumberSort = !this.ascNumberSort;
-//     if(this.ascNumberSort) {
-//         this.TotalConfirmed.sort((a, b) => a - b); // For ascending sort
-//     } else {
-//         this.TotalConfirmed.sort((a, b) => b - a); // For descending sort
-//     }
-// }
-
-ngOnDestroy() {
-    this.subscription.unsubscribe();
+    sortTable(){
+    //     if(this.countryList != null) {
+    //         this.countryList.sort((a, b)=> {
+    //             if(a === '' || a === null || typeof a === undefined) {
+    //                 return 1;
+    //             }
+    //             if(b === '' || b === null || typeof b === undefined) {
+    //                 return -1;
+    //             }
+    //             if(a<b) {
+    //                 return -1;
+    //             }
+    //             else if (a>b) {
+    //                 return 1;
+    //             }
+    //             else {
+    //                 return 0;
+    //             }
+        
+        
+        
+    //     });
+    // 
+    //this.countryList.sort((a,b) => {
+    //     return -1;
+    // })
+    this.countryList.sort((a, b) => {
+        if(a.TotalConfirmed > b.TotalConfirmed) {
+            return -1;
+        }
+    })
+    }
+  
 }
+    
 
-}

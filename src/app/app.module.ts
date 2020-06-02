@@ -20,7 +20,6 @@ import { IndiacasesComponent } from './component/Dashboard/CountryCases/indiacas
 import { AddCommaPipe } from './pipe/add-comma.pipe';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

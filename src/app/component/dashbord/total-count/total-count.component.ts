@@ -13,7 +13,7 @@ export class TotalCountComponent implements OnInit {
   constructor(private backendservice:BackendApiService) { }
 
   ngOnInit(): void {
-    this.totalcases()
+    this.totalcases();
   }
 
     totalcases(){
