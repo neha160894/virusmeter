@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./news-feeds.component.css']
 })
 export class NewsFeedsComponent implements OnInit {
-
-  constructor() { }
+  currentDate = new Date();
+  
+  constructor() {
+ 
+   }
 
   ngOnInit(): void {
   }
