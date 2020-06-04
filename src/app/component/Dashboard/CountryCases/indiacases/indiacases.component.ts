@@ -34,11 +34,11 @@ export class IndiacasesComponent implements OnInit {
     this.backendservice.getIndiaInfo().subscribe((result: any) => {
       this.complaint = result;
 
-      console.log(this.complaint)
+      // console.log(this.complaint)
       this.selectedData = this.complaint.filter((el) => {
         return new Date(el.Date).toISOString() === this.date
       })
-      console.log(this.selectedData)
+      // console.log(this.selectedData)
     })
   }
 
