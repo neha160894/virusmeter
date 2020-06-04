@@ -10,5 +10,11 @@ export class BackendApiService {
   getSummary(){
    return this.http.get(this.url);
   }
+  
+  url1="https://api.covid19api.com/dayone/country/india"
+  getIndiaInfo()
+  {
+    return this.http.get(this.url1)
+  }
 
 }
