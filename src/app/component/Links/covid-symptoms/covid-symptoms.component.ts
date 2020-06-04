@@ -11,5 +11,7 @@ export class CovidSymptomsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onActivate(event) {
+    window.scroll(0,0);
+}
 }
