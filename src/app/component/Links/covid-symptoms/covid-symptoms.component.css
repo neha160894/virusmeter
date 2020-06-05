@@ -1,0 +1,91 @@
+.col-md-8{
+    margin-top: 10%;
+}
+.page-top-label{
+    justify-content: center;
+    background-color: #f5f5f5;
+    color: #777;
+    font-size: 19px;
+    text-transform: uppercase;
+    line-height: 40px;
+  }
+  .page-label-top{
+    text-align: center;
+  }
+  .symptoms{
+      color: green;
+  }
+  .symptoms-sym{
+    margin-left: 40px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .content-inner{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .symptoms-heading{
+      justify-content: center;
+  }
+  .UpdateDate{
+    color: #999;
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 18px;
+    font-style: italic;
+  }
+  .row1{
+      align-items: center;
+  }
+  .page-date-label{
+  font-size: 13px;
+  color: #999;
+  margin-top: 5px;
+  justify-content: center;
+  }
+  .currentdate{
+      font-size: 20px;
+      margin-left: 5px;
+  }
+.blogquots{
+    padding: 10px 20px;
+    margin: 10px 0 20px;
+    font-size: 17.5px;
+    border-left: 5px solid #eee;
+}
+.content-header{
+  margin-left: 20px;
+}
+.content-item{
+  font-size: 20px;
+  margin-top: 20px;
+  font-weight: 300;
+  margin-left: 40px;
+  color: green;
+}
+.see-also{
+  margin-top: 10px;
+    font-style: italic;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+a{
+ color: #699a21;
+ text-decoration: underline; 
+ font-size: 20px;
+ font-style: italic;
+}
+a:hover{
+  color: #86c32a;;
+}
+.ty-heading{
+  margin-top:35px;
+}
+.typicle-symptoms{
+  margin-top: 20px;
+  font-size: 18px;
+}
+.halth{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

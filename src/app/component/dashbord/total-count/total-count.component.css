@@ -19,11 +19,15 @@
   margin-top: 5px;
   justify-content: center;
   }
+  .currentdate{
+      font-size: 20px;
+      margin-left: 5px;
+  }
   ul#menu li {
     display:inline;
   }
   .horizontal-link{
-  margin-top: 20px;
+  /* margin-top: 20px; */
   justify-content: center;
   font-size: 14px; 
   } 
@@ -31,6 +35,7 @@
 a{
     color: #699a21;
     text-decoration: underline;
+    font-size: 17px;
 }
 a:hover{
     color: #86c32a;
@@ -56,9 +61,17 @@ a:hover{
 .view-by-country{
     justify-content: center;
 }
+.main-counter-confirmcases{
+    text-align: center;
+}
 .main-counter-deaths{
-    margin-top: 40px;
-    text-align: center;}
+    text-align: center;
+    margin-top: 30px;
+}
+.main-counter-recovered{
+    text-align: center;
+    margin-top: 30px;
+}
 .recovered{
     color: #8ACA2B;
 }  

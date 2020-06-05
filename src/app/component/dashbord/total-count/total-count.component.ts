@@ -10,12 +10,15 @@ export class TotalCountComponent implements OnInit {
   confirmedCases:number
   totaldeath:number
   totalRecovered:number
-  constructor(private backendservice:BackendApiService) { }
+  currentDate =new Date();
+  lastUpdated:Date
+  constructor(private backendservice:BackendApiService) {
+    
+   }
 
   ngOnInit(): void {
     this.totalcases();
   }
-
     totalcases(){
       this.backendservice.getSummary().subscribe(
         data => {
@@ -23,8 +26,7 @@ export class TotalCountComponent implements OnInit {
        this.confirmedCases=this.totalCases["TotalConfirmed"];
        this.totaldeath=this.totalCases["TotalDeaths"]
        this.totalRecovered=this.totalCases["TotalRecovered"]
+        this.lastUpdated=data["Date"] 
       })
     }
-
-
 }
