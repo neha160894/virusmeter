@@ -9,15 +9,9 @@ export class BackendApiService {
   //private subject = new Subject<any>();
 
   url="https://api.covid19api.com/summary";
+  url2 = "https://api.covid19api.com/dayone/country/";
   //storedUrl = this.subject.asObservable();
-  countryList:any;
-  totalCases: number;
-    totalConfirmed: number;
-    totalDeaths: number;
-    totalRecovered: number;
-    newConfirmed: number;
-    newDeaths:number;
-    newRecovered: number;
+  
 
   constructor(private http: HttpClient) { }
 
@@ -29,5 +23,8 @@ export class BackendApiService {
   //   this.storedUrl = this.subject.asObservable();
   //   return this.storedUrl;
   // }
+  getDetail(id: string) {
+    return this.http.get(this.url2 + id);
+  }
 
   }

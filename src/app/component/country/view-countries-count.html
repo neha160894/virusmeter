@@ -50,12 +50,14 @@
                             <tr 
                                 *ngFor="let list of countryList | filter:searchText; 
                                 let i = index"
-                                style="font-weight: bold">
+                                style="font-weight: bold;">
                                 <td>
                                     {{i+1}}
                                 </td>
                                 <td style="color:#1169A7">
-                                    {{list.Country}}
+                                    <a [routerLink]="['/detail', list.CountryCode]">
+                                        {{list.Country}}
+                                    </a>
                                 </td>
                                 <td>
                                     {{ list.TotalConfirmed + list.NewConfirmed }}

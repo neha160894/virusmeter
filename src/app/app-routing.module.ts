@@ -5,27 +5,35 @@ import { TotalCountComponent } from './component/dashbord/total-count/total-coun
 import { CovidGraphComponent } from './component/Links/covid-graph/covid-graph.component';
 import { NewsFeedsComponent } from './component/Dashboard/Links/news-feeds/news-feeds.component';
 import { IndiacasesComponent } from './component/Dashboard/CountryCases/indiacases/indiacases.component';
+import { CountryDetailComponent } from './component/country-detail/country-detail.component';
 
 
 const routes: Routes = [
   {
     path: '',
     component: UserDashboardComponent,
-    children: [{
+    children: [
+      {
       path: '',
-      component: TotalCountComponent,
+      component: TotalCountComponent},
+      {
+        path:'detail/:id',
+        component: CountryDetailComponent
+      },
+      
+      
+      
+      {
+        path: 'covidgraph',
+        component: CovidGraphComponent
+      } ]
     },
-    {
-      path: 'covidgraph',
-      component: CovidGraphComponent
-    },
-    {
-      path: 'NewsFeeds',
-      component: NewsFeedsComponent
-    }
+      {
+        path: 'NewsFeeds',
+        component: NewsFeedsComponent
+      }
 
-    ]
-  }
+   
 ];
 
 @NgModule({
