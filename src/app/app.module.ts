@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { DataTablesModule } from 'angular-datatables';
 
 import { AppComponent } from './app.component';
 import { ViewCountriesCount } from './component/country/view-countries-count';
@@ -24,7 +23,7 @@ import { CovidTransmissionComponent } from './component/Links/covid-transmission
 import { CovidViewByCountryComponent } from './component/Links/covid-view-by-country/covid-view-by-country.component';
 
 import { AddCommaPipe } from './pipe/add-comma.pipe';
-
+import { CountryDetailComponent } from './component/country-detail/country-detail.component';
 
 
 @NgModule({
@@ -39,6 +38,8 @@ import { AddCommaPipe } from './pipe/add-comma.pipe';
     FooterComponent,
     NewsFeedsComponent,
     IndiacasesComponent,
+    AddCommaPipe,
+    CountryDetailComponent,
     CovidCountryComponent,
     CovidDeathRateComponent,
     CovidSymptomsComponent,
@@ -52,7 +53,6 @@ import { AddCommaPipe } from './pipe/add-comma.pipe';
     AppRoutingModule,
     FormsModule,
     Ng2SearchPipeModule,
-    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

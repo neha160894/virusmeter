@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendApiService } from '../../../services/backend-api.service'
 import { Chart } from 'chart.js';
+
 @Component({
   selector: 'app-covid-graph',
   templateUrl: './covid-graph.component.html',

@@ -17,7 +17,7 @@ export class TotalCountComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.totalcases()
+    this.totalcases();
   }
     totalcases(){
       this.backendservice.getSummary().subscribe(

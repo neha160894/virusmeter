@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row">
+        <div class='card'> 
+            <div>
+                <button 
+                    class="btn btn-secondary float-right m-2" 
+                    (click)="onBack()">
+                    <i class="fa fa-chevron-left"></i>
+                    Back
+                </button>
+            </div>  
+            <div class='card-body'> 
+                <div class='table-responsive text-nowrap'>
+                    <table 
+                        id="table" 
+                        class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Date</th>
+                                <th>Total Cases</th>
+                                <th>Total Deaths</th>
+                                <th>Total Recovered</th>
+                                <th>Active Cases</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="font-weight:bold; text-align:center">
+                                    <td>&nbsp;</td>
+                                    <td style="background-color: #ccc;">Today</td>
+                                    <td style="background-color: #F5894C;">{{ totalList.Confirmed }}</td>
+                                    <td style="background-color: red;color:white">{{ totalList.Deaths }}</td>
+                                    <td style="background-color: #90E79B ;">{{ totalList.Recovered }}</td>
+                                    <td style="background-color: #EAD05D;">{{ totalList.Active }}</td>
+                            </tr>
+                            <tr 
+                                *ngFor="let detail of list; 
+                                let i = index"
+                                style="font-weight:bold; text-align:center">
+                                <td>
+                                    {{i+1}}
+                                </td>
+                                <td style="color:#1169A7">
+                                    {{ detail.Date | date: 'dd/MM/yyyy' }}
+                                </td>
+                                <td>
+                                    {{ detail.Confirmed }}
+                                </td>
+                                <td>
+                                    {{ detail.Deaths }}
+                                </td>
+                                <td>
+                                    {{ detail.Recovered }} 
+                                </td>  
+                                <td>
+                                    {{ detail.Active }} 
+                                </td>               
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

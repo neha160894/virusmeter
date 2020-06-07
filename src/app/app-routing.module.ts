@@ -5,6 +5,7 @@ import { TotalCountComponent } from './component/dashbord/total-count/total-coun
 import { CovidGraphComponent } from './component/Links/covid-graph/covid-graph.component';
 import { NewsFeedsComponent } from './component/Dashboard/Links/news-feeds/news-feeds.component';
 import { IndiacasesComponent } from './component/Dashboard/CountryCases/indiacases/indiacases.component';
+import { CountryDetailComponent } from './component/country-detail/country-detail.component';
 import { CovidCountryComponent } from './component/Links/covid-country/covid-country.component';
 import { CovidDeathRateComponent } from './component/Links/covid-death-rate/covid-death-rate.component';
 import { CovidSymptomsComponent } from './component/Links/covid-symptoms/covid-symptoms.component';
@@ -17,43 +18,51 @@ const routes: Routes = [
   {
     path: '',
     component: UserDashboardComponent,
-    children: [{
+    children: [
+      {
       path: '',
-      component: TotalCountComponent,
-    },
-    {
-      path: 'covidgraph',
-      component: CovidGraphComponent
-    },
-    {
-      path: 'covidcountry',
-      component: CovidCountryComponent
-    },
-    {
-      path:'covidDeathRate',
-      component:CovidDeathRateComponent
-    },
-    {
-      path:'covidSymptoms',
-      component:CovidSymptomsComponent
-    },
-    {
-      path:'covidIncubation',
-      component:CovidIncubationComponent
-    },
-    {
-      path:'covidTransmission',
-      component:CovidTransmissionComponent
-    },
-    {
-      path:'covidviewBycountry',
-      component:CovidViewByCountryComponent
-    },
+      component: TotalCountComponent},
+      {
+        path:'detail/:id',
+        component: CountryDetailComponent
+      }
+      ]
+  },
     {
       path: 'NewsFeeds',
       component: NewsFeedsComponent
-    }
-    ]
+    },
+  {
+    path: 'covidgraph',
+    component: CovidGraphComponent
+  },
+  {
+    path: 'covidcountry',
+    component: CovidCountryComponent
+  },
+  {
+    path:'covidDeathRate',
+    component:CovidDeathRateComponent
+  },
+  {
+    path:'covidSymptoms',
+    component:CovidSymptomsComponent
+  },
+  {
+    path:'covidIncubation',
+    component:CovidIncubationComponent
+  },
+  {
+    path:'covidTransmission',
+    component:CovidTransmissionComponent
+  },
+  {
+    path:'covidviewBycountry',
+    component:CovidViewByCountryComponent
+  },
+  {
+    path: 'NewsFeeds',
+    component: NewsFeedsComponent
   }
 ];
 
