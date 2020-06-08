@@ -8,7 +8,7 @@
                     </div>
                     <div class="card-body">
                         <div class="numbr-table-main">
-                            <span class="number">  {{x.Confirmed}}</span>
+                            <span class="number">  {{x.Confirmed | addComma}}</span>
                         </div>
                         <div class="label">
                             <span>Currently Infected Patients</span>
@@ -16,7 +16,7 @@
                         <div class="row closed-cases-row">
                             <div class="number-mild-condition">
                                 <div class="numbr-table-main">
-                                    <span class="number number-mild-cases">{{x.Active}}</span>
+                                    <span class="number number-mild-cases">{{x.Active | addComma}}</span>
                                 </div>
                                 <div class="label">
                                     <span style="margin-left: 50px;">Currently Active Patients</span>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="card-body">
                         <div class="numbr-table-main">
-                            <span class=" number number-recovered ">{{x.Recovered}}</span>
+                            <span class=" number number-recovered ">{{x.Recovered | addComma}}</span>
                         </div>
                         <div class="label">
                             <span>Recovered/Discharged</span>
@@ -41,7 +41,7 @@
                         <div class="row closed-cases-row">
                             <div class="number-critical-condition" style="margin-left: 100px !important;">
                                 <div class="numbr-table-main">
-                                    <span class="number">{{x.Deaths}}</span>
+                                    <span class="number">{{x.Deaths | addComma}}</span>
                                 </div>
                                 <div class="label">
                                     <span>Deaths</span>

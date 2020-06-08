@@ -4,32 +4,36 @@
             <h4>COVID-19 CORONAVIRUS PANDEMIC</h4>
         </div>
         <div class="row page-date-label">
-            <h4>Last updated:</h4><span class="currentdate">{{lastUpdated}}</span>
+            <h4>Last updated:</h4>
         </div>
-                <div class="row horizontal-link">
-                    <ul>
-                        <!-- <a routerLink="covidgraph">Graph</a>-            
-                        <a routerLink="covidviewBycountry">Country</a>- -->
-                        <a routerLink="covidSymptoms">Symptoms</a>            
-                    </ul>
-                </div>
-        <div class="main-counter-confirmcases">
+        <div class="row horizontal-link">
+            <ul id="menu">
+                <li> <a routerLink="covidgraph">Graphs</a></li>-
+                <li> <a href="">Countries</a></li>-
+                <li> <a href="">Death Rate</a></li>-
+                <li><a href="">Symptoms</a></li>-
+                <li><a href="">Incubation</a></li>-
+                <li><a href="">Transmission</a></li>
+
+            </ul>
+        </div>
+        <div class="main-counter-deaths">
             <h1 class="row main-counter">Coronavirus Cases:</h1>
             <div class="row main-counter-number">
-                <span class="totalcases" >{{confirmedCases}}</span>
+                <span class="totalcases">{{confirmedCases | addComma}}</span>
             </div>
         </div>
-        <!-- <div class="row view-by-country">
-            <a routerLink="covidviewBycountry">View-by-country</a>
-        </div> -->
+        <div class="row view-by-country">
+            <a href="">View-by-country</a>
+        </div>
         <div class="main-counter-deaths">
             <h1 class="main-counter">Deaths:</h1>
-            <span class="main-counter-number deaths">{{totaldeath}}</span>
+            <span class="main-counter-number deaths">{{totaldeath | addComma}}</span>
         </div>
 
-        <div class="main-counter-recovered">
+        <div class="main-counter-deaths">
             <h1 class="row main-counter">Recovered:</h1>
-            <span class="row main-counter-number recovered">{{totalRecovered}}</span>
+            <span class="row main-counter-number recovered">{{totalRecovered | addComma}}</span>
         </div>
     </div>
 </div>
