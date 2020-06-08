@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { BackendApiService } from '../../services/backend-api.service';
-import { OrderPipe } from 'ngx-order-pipe';
 
 @Component({
     selector: 'app-view-countries-count',
@@ -11,7 +10,7 @@ import { OrderPipe } from 'ngx-order-pipe';
 
 export class ViewCountriesCount implements OnInit {
     pageTitle = 'List of Countries';
-    countryList: [];
+    countryList: any[];
     searchText: string;
     totalCases: number;
     totalConfirmed: number;
@@ -21,48 +20,31 @@ export class ViewCountriesCount implements OnInit {
     newDeaths:number;
     newRecovered: number;
 
-    constructor(private countries: BackendApiService) {
-                    
-                }
+    constructor(private service: BackendApiService) {}
+
+  
     ngOnInit() {    
-        this.getCountryList();
-        this.getGlobalList();
-
-        // $(document).ready(function() {
-        //     $('#table').DataTable();
-        // } );
+        this.getList(); 
+        
     }
 
-    getCountryList() {
-        this.countries.getSummary().subscribe((data) => {
-            let result = data['Countries'];
-            this.countryList = result.filter((el:any) => {
-                return el;
-            })
-        })
-    }
-
-    getGlobalList() {
-        this.countries.getSummary().subscribe((data) => {
-            this.totalCases= data["Global"];
+    getList() {
+        this.service.getSummary().subscribe((data) => {
+        this.totalCases = data['Global'];
+        let result = data['Countries'];
             this.newConfirmed = this.totalCases["NewConfirmed"];
             this.totalConfirmed=this.totalCases["TotalConfirmed"];
             this.newDeaths=this.totalCases["NewDeaths"];
             this.totalDeaths=this.totalCases["TotalDeaths"];
             this.totalRecovered=this.totalCases["TotalRecovered"];
             this.newRecovered=this.totalCases["NewRecovered"]
-        })
-    }
-
-    ascNumberSort = true;
-    TotalConfirmed;
-    sortNumberColumn() {
-    this.ascNumberSort = !this.ascNumberSort;
-    if(this.ascNumberSort) {
-        this.TotalConfirmed.sort((a, b) => a - b); // For ascending sort
-    } else {
-        this.TotalConfirmed.sort((a, b) => b - a); // For descending sort
+        this.countryList = result.filter((el:any) => {
+            return el;
+        });
+        this.countryList = this.countryList.sort((a, b) => (a.TotalConfirmed > b.TotalConfirmed) ? -1 : 1)
+        
+      })
     }
 }
+    
 
-}
