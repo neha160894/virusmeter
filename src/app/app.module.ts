@@ -24,7 +24,7 @@ import { CovidViewByCountryComponent } from './component/Links/covid-view-by-cou
 
 import { AddCommaPipe } from './pipe/add-comma.pipe';
 import { CountryDetailComponent } from './component/country-detail/country-detail.component';
-
+import { AdsenseModule } from 'ng2-adsense';
 
 @NgModule({
   declarations: [
@@ -53,6 +53,10 @@ import { CountryDetailComponent } from './component/country-detail/country-detai
     AppRoutingModule,
     FormsModule,
     Ng2SearchPipeModule,
+    AdsenseModule.forRoot({
+      adClient: 'ca-pub-3680482764129527',
+      adSlot: 7779355779
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

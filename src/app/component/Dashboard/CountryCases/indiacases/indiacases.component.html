@@ -1,7 +1,7 @@
 <div class="container" *ngFor="let x of selectedData">
     <div class="col-md-8">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
                         <h6>India Active Cases</h6>
@@ -13,20 +13,17 @@
                         <div class="label">
                             <span>Currently Infected Patients</span>
                         </div>
-                        <div class="row closed-cases-row">
-                            <div class="number-mild-condition">
-                                <div class="numbr-table-main">
-                                    <span class="number number-mild-cases">{{x.Active | addComma}}</span>
-                                </div>
-                                <div class="label">
-                                    <span style="margin-left: 50px;">Currently Active Patients</span>
-                                </div>
-                            </div>
+                        
+                        <div class="numbr-table-main" style="margin-top:15px">
+                            <span class="number number-mild-cases">{{x.Active | addComma}}</span>
+                        </div>
+                        <div class="label">
+                            <span>Currently Active Patients</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
                         <h6>India Closed Cases</h6>
@@ -38,16 +35,11 @@
                         <div class="label">
                             <span>Recovered/Discharged</span>
                         </div>
-                        <div class="row closed-cases-row">
-                            <div class="number-critical-condition" style="margin-left: 100px !important;">
-                                <div class="numbr-table-main">
-                                    <span class="number">{{x.Deaths | addComma}}</span>
-                                </div>
-                                <div class="label">
-                                    <span>Deaths</span>
-                                </div>
-                            </div>
-
+                        <div class="numbr-table-main" style="margin-top:15px">
+                            <span class="number">{{x.Deaths | addComma}}</span>
+                        </div>
+                        <div class="label">
+                            <span>Deaths</span>
                         </div>
                     </div>
                 </div>

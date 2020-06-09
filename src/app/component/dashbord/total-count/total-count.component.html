@@ -1,39 +1,50 @@
 <div class="container">
-    <div class="col-md-8">
-        <div class="row page-top-label">
-            <h4>COVID-19 CORONAVIRUS PANDEMIC</h4>
-        </div>
-        <div class="row page-date-label">
-            <h4>Last updated:</h4>
-        </div>
-        <div class="row horizontal-link">
-            <ul id="menu">
-                <li> <a routerLink="covidgraph">Graphs</a></li>-
-                <li> <a href="">Countries</a></li>-
-                <li> <a href="">Death Rate</a></li>-
-                <li><a href="">Symptoms</a></li>-
-                <li><a href="">Incubation</a></li>-
-                <li><a href="">Transmission</a></li>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row page-top-label">
+                <h4>COVID-19 CORONAVIRUS PANDEMIC</h4>
+            </div>
+            <div class="row page-date-label">
+                <h4>Last updated:</h4>
+            </div>
+            <div class="row horizontal-link">
+                <ul id="menu">
+                    <li> <a routerLink="covidgraph">Graphs</a></li>-
+                    <li> <a href="">Countries</a></li>-
+                    <li> <a href="">Death Rate</a></li>-
+                    <li><a href="">Symptoms</a></li>-
+                    <li><a href="">Incubation</a></li>-
+                    <li><a href="">Transmission</a></li>
 
-            </ul>
-        </div>
-        <div class="main-counter-deaths">
-            <h1 class="row main-counter">Coronavirus Cases:</h1>
-            <div class="row main-counter-number">
-                <span class="totalcases">{{confirmedCases | addComma}}</span>
+                </ul>
+            </div>
+            <div class="main-counter-deaths">
+                <h1 class="row main-counter">Coronavirus Cases:</h1>
+                <div class="row main-counter-number">
+                    <span class="totalcases">{{confirmedCases | addComma}}</span>
+                </div>
+            </div>
+            <div class="row view-by-country">
+                <a href="">View-by-country</a>
+            </div>
+            <div class="main-counter-deaths">
+                <h1 class="main-counter">Deaths:</h1>
+                <span class="main-counter-number deaths">{{totaldeath | addComma}}</span>
+            </div>
+
+            <div class="main-counter-deaths">
+                <h1 class="row main-counter">Recovered:</h1>
+                <span class="row main-counter-number recovered">{{totalRecovered | addComma}}</span>
             </div>
         </div>
-        <div class="row view-by-country">
-            <a href="">View-by-country</a>
-        </div>
-        <div class="main-counter-deaths">
-            <h1 class="main-counter">Deaths:</h1>
-            <span class="main-counter-number deaths">{{totaldeath | addComma}}</span>
-        </div>
-
-        <div class="main-counter-deaths">
-            <h1 class="row main-counter">Recovered:</h1>
-            <span class="row main-counter-number recovered">{{totalRecovered | addComma}}</span>
+        <div class="col-md-4">
+            ads will be displayed here...
+            <ng-adsense
+                [adClient]="'ca-pub-3680482764129527'"
+                [adSlot]="7779355779"
+                [display]="'inline-block'"
+                [width]="320"
+                [height]="108"></ng-adsense>
         </div>
     </div>
 </div>
