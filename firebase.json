@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/virusmeter",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
