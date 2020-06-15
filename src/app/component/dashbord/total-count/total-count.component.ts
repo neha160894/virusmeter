@@ -22,11 +22,11 @@ export class TotalCountComponent implements OnInit {
     totalcases(){
       this.backendservice.getSummary().subscribe(
         data => {
-       this.totalCases= data["Global"]
+       this.totalCases= data["Global"];
        this.confirmedCases=this.totalCases["TotalConfirmed"];
-       this.totaldeath=this.totalCases["TotalDeaths"]
-       this.totalRecovered=this.totalCases["TotalRecovered"]
-        this.lastUpdated=data["Date"] 
+       this.totaldeath=this.totalCases["TotalDeaths"];
+       this.totalRecovered=this.totalCases["TotalRecovered"];
+        this.lastUpdated=data["Date"];
       })
     }
 }

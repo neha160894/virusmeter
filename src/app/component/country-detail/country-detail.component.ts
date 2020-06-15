@@ -4,7 +4,8 @@ import { BackendApiService } from '../../services/backend-api.service';
 
 @Component({
     selector: 'app-country-detail',
-    templateUrl: './country-detail.component.html'
+    templateUrl: './country-detail.component.html',
+    styleUrls:['./country-detail.component.css']
 })
 
 export class CountryDetailComponent implements OnInit {

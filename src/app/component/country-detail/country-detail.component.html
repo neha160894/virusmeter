@@ -1,14 +1,18 @@
 <div class="container">
     <div class="row">
-        <div class='card'> 
-            <div>
-                <button 
-                    class="btn btn-secondary float-right m-2" 
-                    (click)="onBack()">
-                    <i class="fa fa-chevron-left"></i>
-                    Back
-                </button>
-            </div>  
+        <div class="w-100">
+            <button 
+                class="button float-right m-2" 
+                (click)="onBack()">
+                <i class="fa fa-chevron-left"></i>
+                Back
+            </button>
+        </div>
+        <div class='card m-2'> 
+            <div class='card-header head' id="r1">
+                <b> {{totalList.Country}} </b>
+            </div>
+              
             <div class='card-body'> 
                 <div class='table-responsive text-nowrap'>
                     <table 
