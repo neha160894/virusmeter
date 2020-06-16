@@ -1,5 +1,8 @@
 <div class="container">
-    <div class="row">
+    <div *ngIf="isLoading" style="text-align:center;">
+        <spinner></spinner>
+    </div>
+    <div class="row" *ngIf="!isLoading">
         <div class="w-100">
             <button 
                 class="button float-right m-2" 

@@ -25,6 +25,7 @@ import { CovidViewByCountryComponent } from './component/Links/covid-view-by-cou
 import { AddCommaPipe } from './pipe/add-comma.pipe';
 import { CountryDetailComponent } from './component/country-detail/country-detail.component';
 import { AdsenseModule } from 'ng2-adsense';
+import { SpinnerComponent } from './shared/spinner.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AdsenseModule } from 'ng2-adsense';
     CovidSymptomsComponent,
     CovidIncubationComponent,
     CovidTransmissionComponent,
-    CovidViewByCountryComponent
+    CovidViewByCountryComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
