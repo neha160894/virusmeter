@@ -21,11 +21,10 @@ import { CovidSymptomsComponent } from './component/Links/covid-symptoms/covid-s
 import { CovidIncubationComponent } from './component/Links/covid-incubation/covid-incubation.component';
 import { CovidTransmissionComponent } from './component/Links/covid-transmission/covid-transmission.component';
 import { CovidViewByCountryComponent } from './component/Links/covid-view-by-country/covid-view-by-country.component';
-
 import { AddCommaPipe } from './pipe/add-comma.pipe';
 import { CountryDetailComponent } from './component/country-detail/country-detail.component';
 import { AdsenseModule } from 'ng2-adsense';
-
+import { ReuseablechartComponent } from './component/chart/reuseablechart/reuseablechart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +44,9 @@ import { AdsenseModule } from 'ng2-adsense';
     CovidSymptomsComponent,
     CovidIncubationComponent,
     CovidTransmissionComponent,
-    CovidViewByCountryComponent
+    CovidViewByCountryComponent,
+    ReuseablechartComponent,
+   
   ],
   imports: [
     BrowserModule,
