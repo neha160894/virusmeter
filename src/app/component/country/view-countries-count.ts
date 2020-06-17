@@ -25,7 +25,6 @@ export class ViewCountriesCount implements OnInit {
   
     ngOnInit() {    
         this.getList(); 
-        
     }
 
     getList() {
