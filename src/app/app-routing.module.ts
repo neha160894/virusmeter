@@ -59,10 +59,6 @@ const routes: Routes = [
   {
     path:'covidviewBycountry',
     component:CovidViewByCountryComponent
-  },
-  {
-    path: 'NewsFeeds',
-    component: NewsFeedsComponent
   }
 ];
 
