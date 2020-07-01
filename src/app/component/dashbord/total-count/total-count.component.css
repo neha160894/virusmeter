@@ -24,9 +24,9 @@
       font-size: 20px;
       margin-left: 5px;
   }
-#menu{
+/* #menu{
     display: none;
-}
+} */
   ul#menu li {
     display:inline;
   }
