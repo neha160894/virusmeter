@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-news-feeds',
@@ -8,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class NewsFeedsComponent implements OnInit {
   currentDate = new Date();
   
-  constructor() {
+  constructor(private router: Router) {
  
    }
 
   ngOnInit(): void {
   }
 
+  onBack(): void {
+    this.router.navigate(['']);
+}
 }

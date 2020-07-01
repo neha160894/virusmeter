@@ -1,5 +1,8 @@
 <div class="container">
-    <div class="row">
+    <div *ngIf="isLoading" style="text-align:center;">
+        <spinner></spinner>
+    </div>
+    <div class="row" *ngIf="!isLoading">
         <div class="col-md-8">
             <div class="row page-top-label">
                 <h4>COVID-19 CORONAVIRUS PANDEMIC</h4>
@@ -33,7 +36,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            ads will be displayed here...
+            <!-- ads will be displayed here... -->
             <ng-adsense
                 [adClient]="'ca-pub-3680482764129527'"
                 [adSlot]="7779355779"
