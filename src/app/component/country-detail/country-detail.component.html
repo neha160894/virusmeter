@@ -1,19 +1,19 @@
 <div class="container">
     <div class="row">
-        <div class='card'> 
+        <div class='card'>
             <div>
-                <button 
-                    class="btn btn-secondary float-right m-2" 
-                    (click)="onBack()">
+                <button class="btn btn-secondary float-right m-2" (click)="onBack()">
                     <i class="fa fa-chevron-left"></i>
                     Back
                 </button>
-            </div>  
-            <div class='card-body'> 
+                <button class="btn btn-secondary float-right m-2" (click)="openModal()">
+                    Show Graph
+                </button>
+
+            </div>
+            <div class='card-body'>
                 <div class='table-responsive text-nowrap'>
-                    <table 
-                        id="table" 
-                        class="table table-bordered">
+                    <table id="table" class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -26,17 +26,15 @@
                         </thead>
                         <tbody>
                             <tr style="font-weight:bold; text-align:center">
-                                    <td>&nbsp;</td>
-                                    <td style="background-color: #ccc;">Today</td>
-                                    <td style="background-color: #F5894C;">{{ totalList.Confirmed }}</td>
-                                    <td style="background-color: red;color:white">{{ totalList.Deaths }}</td>
-                                    <td style="background-color: #90E79B ;">{{ totalList.Recovered }}</td>
-                                    <td style="background-color: #EAD05D;">{{ totalList.Active }}</td>
+                                <td>&nbsp;</td>
+                                <td style="background-color: #ccc;">Today</td>
+                                <td style="background-color: #F5894C;">{{ totalList.Confirmed }}</td>
+                                <td style="background-color: red;color:white">{{ totalList.Deaths }}</td>
+                                <td style="background-color: #90E79B ;">{{ totalList.Recovered }}</td>
+                                <td style="background-color: #EAD05D;">{{ totalList.Active }}</td>
                             </tr>
-                            <tr 
-                                *ngFor="let detail of list; 
-                                let i = index"
-                                style="font-weight:bold; text-align:center">
+                            <tr *ngFor="let detail of list; 
+                                let i = index" style="font-weight:bold; text-align:center">
                                 <td>
                                     {{i+1}}
                                 </td>
@@ -50,17 +48,41 @@
                                     {{ detail.Deaths }}
                                 </td>
                                 <td>
-                                    {{ detail.Recovered }} 
-                                </td>  
+                                    {{ detail.Recovered }}
+                                </td>
                                 <td>
-                                    {{ detail.Active }} 
-                                </td>               
+                                    {{ detail.Active }}
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="customerModal" class="modal fade bd-example-modal-xl" role="dialog">
+    <div>
+        <div class=" modal-dialog  modal-xl modal-dialog-scrollable">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="color: #337ab7;">Country Graph</h2>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="chart-container">
+                        <canvas id="canvas" width="110" height="50" style="margin-top: 50px;margin-right: 80px !important;margin-left: 30px;"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
         </div>
     </div>
 </div>
