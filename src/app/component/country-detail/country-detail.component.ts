@@ -7,28 +7,22 @@ declare var $: any;
 @Component({
     selector: 'app-country-detail',
     templateUrl: './country-detail.component.html',
-<<<<<<< HEAD
-    styleUrls:['./country-detail.component.css']
-=======
+    styleUrls:['./country-detail.component.css'],
     providers: [DatePipe]
 
->>>>>>> 56048f6060f642cc854088804a488ea3e68b26bb
 })
 
 export class CountryDetailComponent implements OnInit {
     list:any;
     id: any;
     totalList: any;
-<<<<<<< HEAD
     isLoading = false;
-=======
     
   chart: [];
   complaint: any[];
   chartdate = [];
    active= [];
    
->>>>>>> 56048f6060f642cc854088804a488ea3e68b26bb
 
     constructor(private route: ActivatedRoute,
                 private router: Router,
