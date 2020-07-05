@@ -12,7 +12,7 @@ import { CovidSymptomsComponent } from './component/Links/covid-symptoms/covid-s
 import { CovidIncubationComponent } from './component/Links/covid-incubation/covid-incubation.component';
 import { CovidTransmissionComponent } from './component/Links/covid-transmission/covid-transmission.component';
 import { CovidViewByCountryComponent } from './component/Links/covid-view-by-country/covid-view-by-country.component';
-
+import{ReuseablechartComponent} from './component/chart/reuseablechart/reuseablechart.component'
 
 const routes: Routes = [
   {
@@ -21,10 +21,16 @@ const routes: Routes = [
     children: [
       {
       path: '',
-      component: TotalCountComponent},
+      component: TotalCountComponent
+      },
       {
         path:'detail/:id',
         component: CountryDetailComponent
+      },
+      {
+        path:'app-reuseablechart',
+        component: ReuseablechartComponent
+      
       }
       ]
   },
