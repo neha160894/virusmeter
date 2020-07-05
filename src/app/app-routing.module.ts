@@ -12,7 +12,7 @@ import { CovidSymptomsComponent } from './component/Links/covid-symptoms/covid-s
 import { CovidIncubationComponent } from './component/Links/covid-incubation/covid-incubation.component';
 import { CovidTransmissionComponent } from './component/Links/covid-transmission/covid-transmission.component';
 import { CovidViewByCountryComponent } from './component/Links/covid-view-by-country/covid-view-by-country.component';
-
+import{ReuseablechartComponent} from './component/chart/reuseablechart/reuseablechart.component'
 
 const routes: Routes = [
   {
@@ -22,11 +22,18 @@ const routes: Routes = [
       {
       path: '',
       component: TotalCountComponent
-    },
+      },
       {
         path:'detail/:id',
         component: CountryDetailComponent
       },
+      {
+        path:'app-reuseablechart',
+        component: ReuseablechartComponent
+      
+      }
+      ]
+  },
     {
       path: 'NewsFeeds',
       component: NewsFeedsComponent
@@ -59,8 +66,6 @@ const routes: Routes = [
     path:'covidviewBycountry',
     component:CovidViewByCountryComponent
   }
-  ]
-},
 ];
 
 @NgModule({
