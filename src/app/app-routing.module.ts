@@ -21,13 +21,12 @@ const routes: Routes = [
     children: [
       {
       path: '',
-      component: TotalCountComponent},
+      component: TotalCountComponent
+    },
       {
         path:'detail/:id',
         component: CountryDetailComponent
-      }
-      ]
-  },
+      },
     {
       path: 'NewsFeeds',
       component: NewsFeedsComponent
@@ -60,6 +59,8 @@ const routes: Routes = [
     path:'covidviewBycountry',
     component:CovidViewByCountryComponent
   }
+  ]
+},
 ];
 
 @NgModule({

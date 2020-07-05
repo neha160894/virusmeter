@@ -1,5 +1,8 @@
 .col-md-8{
-    margin-top: 10%;
+    margin-top: 20px;
+}
+.btnrow{
+  margin-bottom: 20px;
 }
 .page-top-label{
     justify-content: center;
