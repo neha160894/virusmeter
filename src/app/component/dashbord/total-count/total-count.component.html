@@ -1,21 +1,19 @@
 <div class="container">
-    <div class="row">
+    <div *ngIf="isLoading" style="text-align:center;">
+        <spinner></spinner>
+    </div>
+    <div class="row" *ngIf="!isLoading">
         <div class="col-md-8">
             <div class="row page-top-label">
                 <h4>COVID-19 CORONAVIRUS PANDEMIC</h4>
             </div>
             <div class="row page-date-label">
-                <h4>Last updated:</h4>
+                <h4>Last updated: {{ lastUpdated | date:'medium' }}</h4>
             </div>
             <div class="row horizontal-link">
                 <ul id="menu">
-                    <li> <a routerLink="covidgraph">Graphs</a></li>-
-                    <li> <a href="">Countries</a></li>-
-                    <li> <a href="">Death Rate</a></li>-
-                    <li><a href="">Symptoms</a></li>-
-                    <li><a href="">Incubation</a></li>-
-                    <li><a href="">Transmission</a></li>
-
+                    <li> <a  href="" routerLink="covidgraph">Graphs</a></li>-
+                    <li><a href="" routerLink="covidSymptoms">Symptoms</a></li>
                 </ul>
             </div>
             <div class="main-counter-deaths">

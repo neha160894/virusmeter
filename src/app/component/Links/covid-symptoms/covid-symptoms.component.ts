@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import{Router} from'@angular/router'
 @Component({
   selector: 'app-covid-symptoms',
   templateUrl: './covid-symptoms.component.html',
@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CovidSymptomsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
   onActivate(event) {
     window.scroll(0,0);
+}
+onBack(): void {
+  this.router.navigate(['']);
 }
 }
